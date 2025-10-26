@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FastFix · Propuesta Web para Vertical Brokers (Lima, Perú)</title>
+    <meta
+      name="description"
+      content="Propuesta/cotización en soles para el sitio de Vertical Brokers: planes desde landing a portal de brokers, correo institucional, hosting, dominio y SEO."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrap nav">
+        <div class="brand">
+          <h1 class="brand-title">Fast Fix</h1>
+        </div>
+        <nav class="menu">
+          <a href="#planes">Planes</a>
+          <a href="#correo-hosting">Correo & Hosting</a>
+          <a href="#alcances">Alcances</a>
+          <a href="#contacto">Contacto</a>
+          <button class="btn" onclick="window.print()">Imprimir / PDF</button>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <span class="kicker">Propuesta Web — Lima, Perú</span>
+          <h2>
+            Vertical Brokers · Sitio web inmobiliario y captación de brokers
+          </h2>
+          <p>
+            4 niveles —desde landing económica hasta portal para brokers— con
+            precios acordes al mercado peruano. Incluye correo institucional,
+            hosting, dominio y SEO.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planes">Ver planes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="planes">
+      <div class="wrap">
+        <h3>Planes y precios (solo desarrollo)</h3>
+        <p class="sub">
+          Precios en <b>S/</b> (no incluyen IGV 18%). Forma de pago sugerida:
+          50% inicio / 50% entrega.
+        </p>
+
+        <div class="grid cols-2">
+          <article class="card">
+            <span class="pill">BÁSICO — Landing</span>
+            <div class="price">S/ 900 <span class="sub">(único)</span></div>
+            <ul class="clean">
+              <li>One-page en WordPress o HTML estático</li>
+              <li>Secciones: héroe, 4 proyectos, beneficios, contacto</li>
+              <li>Formulario conectado a correo institucional</li>
+              <li>WhatsApp + Google Analytics + SSL</li>
+              <li>SEO on-page mínimo (títulos/metas)</li>
+              <li>Plazo: 1–2 semanas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">INTERMEDIO — Brochure + SEO Básico</span>
+            <div class="price">S/ 2,400 <span class="sub">(único)</span></div>
+            <ul class="clean">
+              <li>5–7 secciones + 4 fichas de proyecto</li>
+              <li>Blog base, sitemap/robots, Search Console</li>
+              <li>Optimización técnica básica</li>
+              <li>SEO Básico: 5 keywords locales — <b>S/ 450/mes</b></li>
+              <li>Plazo: 3–4 semanas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">PRO — Catálogo + SEO Full</span>
+            <div class="price">S/ 4,900 <span class="sub">(único)</span></div>
+            <ul class="clean">
+              <li>Catálogo con filtros + ficha completa (galería, planos)</li>
+              <li>Landing por proyecto para campañas</li>
+              <li>Schema inmobiliario, tracking de posiciones</li>
+              <li>SEO Full: 10–20 keywords — <b>S/ 1,200/mes</b></li>
+              <li>Plazo: 5–7 semanas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="pill">PRO+ — Portal Brokers (MVP)</span>
+            <div class="price">S/ 6,900 <span class="sub">(único)</span></div>
+            <ul class="clean">
+              <li>Registro/login de brokers y área privada</li>
+              <li>Materiales por proyecto, listas de precios</li>
+              <li>Links de referido y tablero de leads básico</li>
+              <li>SEO Full: 10–20 keywords — <b>S/ 1,200/mes</b></li>
+              <li>Plazo: 8–10 semanas</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Post-planes: Pasos (izquierda) + Calculadora (derecha) -->
+        <div
+          class="grid cols-2"
+          id="post-planes-tools"
+          style="margin-top: 18px"
+        >
+          <div class="card" id="pasos" style="align-self: start">
+            <span class="pill">¿Cómo avanzar?</span>
+            <ol class="clean" style="margin-left: 18px">
+              <li>
+                <b>Elige</b> un plan y define correos, hosting y dominio en la
+                calculadora.
+              </li>
+              <li>
+                Revisa el <b>Total inicial</b> y costos
+                <b>mensuales/anuales</b> estimados.
+              </li>
+              <li>
+                Haz clic en <b>Rellenar Formulario</b> y completa tus datos.
+              </li>
+              <li>
+                Te llegará el <b>presupuesto</b> a tu correo y coordinamos el
+                inicio (50%/50%).
+              </li>
+            </ol>
+            <div style="margin-top: 12px">
+              <a class="btn" href="#contacto">Rellenar Formulario</a>
+            </div>
+          </div>
+
+          <div class="card calc" id="cotizador" style="align-self: start">
+            <span class="pill">Calculadora rápida</span>
+            <div class="calc-grid">
+              <label
+                ><b>Plan</b><br />
+                <select id="planSel" class="input">
+                  <option value="BASICO">BÁSICO — S/ 900 (único)</option>
+                  <option value="INTERMEDIO">
+                    INTERMEDIO — S/ 2400 (único) + SEO Básico S/ 450/mes
+                  </option>
+                  <option value="PRO">
+                    PRO — S/ 4900 (único) + SEO Full S/ 1200/mes
+                  </option>
+                  <option value="PROPLUS">
+                    PRO+ — S/ 6900 (único) + SEO Full S/ 1200/mes
+                  </option>
+                </select>
+              </label>
+              <label
+                ><b>Correos (Google Workspace)</b><br />
+                <select id="mailSel" class="input">
+                  <option value="0">Sin correo</option>
+                  <option value="5">5 correos (S/ 149.5/mes)</option>
+                  <option value="10">10 correos (S/ 299/mes)</option>
+                </select>
+              </label>
+              <label
+                ><b>Hosting</b><br />
+                <select id="hostSel" class="input">
+                  <option value="0">A definir</option>
+                  <option value="240">Compartido — S/ 240/año</option>
+                  <option value="990">VPS — S/ 990/año</option>
+                  <option value="1890">VPS — S/ 1890/año</option>
+                </select>
+              </label>
+              <label
+                ><b>Dominio</b><br />
+                <select id="domSel" class="input">
+                  <option value="0">Cliente ya tiene</option>
+                  <option value="129">.pe / .com.pe — S/ 129/año</option>
+                </select>
+              </label>
+
+              <div class="calc-total">
+                <div>
+                  <b>Total inicial (único):</b>
+                  <span id="totalUnico">S/ 900</span>
+                </div>
+                <div class="sub">
+                  Recurrencias estimadas:
+                  <span id="recurrente">S/ 0/mes</span> +
+                  <span id="anual">S/ 0/año</span> (no incluye IGV).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /post-planes-tools -->
+      </div>
+    </section>
+
+    <section id="correo-hosting">
+      <div class="wrap">
+        <h3>Correo institucional, hosting y dominio</h3>
+        <div class="grid cols-2">
+          <div class="card">
+            <span class="pill">Correo — Google Workspace Business Starter</span>
+            <ul class="clean">
+              <li>30 GB por usuario</li>
+              <li>5 correos: <b>S/ 149.50/mes</b> (sin IGV)</li>
+              <li>10 correos: <b>S/ 299.00/mes</b> (sin IGV)</li>
+              <li>*Se factura mensualmente por usuario.*</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="pill">Hosting y dominio</span>
+            <ul class="clean">
+              <li>Hosting compartido: <b>S/ 240/año</b> (referencial)</li>
+              <li>VPS: <b>S/ 990–1,890/año</b> (según plan)</li>
+              <li>Dominio .pe / .com.pe: <b>S/ 129/año</b> (referencial)</li>
+              <li>
+                *Se pueden contratar con nuestro partner o con el proveedor de
+                su preferencia.*
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alcances">
+      <div class="wrap">
+        <h3>Alcances y metodología</h3>
+        <div class="grid cols-2">
+          <div class="card">
+            <span class="pill">Metodología</span>
+            <ol class="clean" style="margin-left: 18px">
+              <li>
+                <b>Kickoff</b>: objetivos, tono de marca y arquitectura IA.
+              </li>
+              <li><b>Contenidos</b>: cliente entrega textos/renders/planos.</li>
+              <li><b>UI/UX</b>: wireframe y diseño visual por plan.</li>
+              <li>
+                <b>Desarrollo</b>: WordPress (o stack estático para Básico).
+              </li>
+              <li><b>QA & SEO</b>: pruebas, performance y SEO según plan.</li>
+              <li><b>Entrega</b>: traspaso y capacitación breve.</li>
+            </ol>
+          </div>
+          <div class="card">
+            <span class="pill">Incluye / No incluye</span>
+            <ul class="clean">
+              <li>
+                Incluye: implementación, configuración básica de analítica, SSL,
+                y copia de seguridad inicial.
+              </li>
+              <li>
+                No incluye: redacción profesional, fotos/renders, licencias
+                premium, pasarelas de pago, CRM, firma digital, módulos legales
+                o de comisiones (salvo PRO+, MVP de referidos/leadboard).
+              </li>
+              <li>
+                Horas de soporte post-lanzamiento: 10 horas en 30 días
+                (PRO/PRO+). En Básico/Intermedio: 4 horas.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta">
+      <div class="wrap">
+        <div class="card cta">
+          <div>
+            <h3>¿Listos para avanzar?</h3>
+            <p class="sub">
+              Validez de la oferta: 15 días. Pago: 50% inicio / 50% contra
+              entrega. Plazos sujetos a entrega de contenidos.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a id="ctaForm" class="btn btn-primary" href="#contacto"
+              >Rellenar Formulario</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <h3>Contacto</h3>
+        <p class="sub">
+          Déjanos tus datos; al enviar recibimos tu <b>presupuesto</b> con el
+          plan seleccionado.
+        </p>
+        <form id="contactForm" class="card form-grid">
+          <label
+            >Nombre*<br /><input id="cName" type="text" required class="input"
+          /></label>
+          <label
+            >Correo*<br /><input
+              id="cEmail"
+              type="email"
+              required
+              class="input"
+          /></label>
+          <label
+            >Teléfono*<br /><input
+              id="cPhone"
+              type="tel"
+              required
+              pattern="[0-9 +\-]{7,}"
+              class="input"
+          /></label>
+          <label
+            >Mensaje (opcional)<br /><textarea
+              id="cMsg"
+              rows="3"
+              class="input"
+            ></textarea>
+          </label>
+          <div class="form-actions">
+            <small class="sub"
+              >*Al enviar, te contactaremos por email y registraremos el
+              <b>presupuesto</b>.</small
+            >
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div id="formStatus" class="sub" style="display: none"></div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap footer">
+        <div>
+          <b>FastFix</b><br />
+          <span class="sub">Propuesta para Vertical Brokers — Lima, Perú</span
+          ><br />
+          <a
+            class="sub"
+            href="https://wa.me/51940708161"
+            target="_blank"
+            rel="noopener"
+            >WhatsApp: +569 8 6051779</a
+          >
+          <div class="social">
+            <a
+              class="btn btn-ig"
+              href="https://www.instagram.com/fastfixchile/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram FastFix"
+            >
+              <svg
+                class="ig-icon"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                  ry="5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+              <span>Síguenos</span>
+            </a>
+          </div>
+        </div>
+        <div class="sub">
+          © <span id="year"></span> — Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Barra de edición (modo editable) -->
+    <div id="editorbar" class="editorbar">
+      <input type="checkbox" id="editToggle" />
+      <label for="editToggle">Editar</label>
+      <button id="editSave" class="btn" type="button">Guardar</button>
+      <button id="editExport" class="btn" type="button">Exportar HTML</button>
+    </div>
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script>
+      const $ = (s, ctx = document) => ctx.querySelector(s);
+
+      // ======== Valores de precios
+      const PRICES = {
+        unico: { BASICO: 900, INTERMEDIO: 2400, PRO: 4900, PROPLUS: 6900 },
+        seo: { BASICO: 0, INTERMEDIO: 450, PRO: 1200, PROPLUS: 1200 },
+        mail: { none: 0, five: 149.5, ten: 299 },
+      };
+      const AGENCY_EMAIL = "g.sus.zillos@gmail.com";
+      const fmt = (v) =>
+        `S/ ${Number(v || 0).toLocaleString("es-PE", {
+          maximumFractionDigits: 2,
+        })}`;
+
+      // Año dinámico
+      $("#year").textContent = new Date().getFullYear();
+
+      // ======== Calculadora
+      const planSel = $("#planSel");
+      const mailSel = $("#mailSel");
+      const hostSel = $("#hostSel");
+      const domSel = $("#domSel");
+      const totalUnico = $("#totalUnico");
+      const recurrente = $("#recurrente");
+      const anual = $("#anual");
+
+      function recalc() {
+        const plan = planSel.value;
+        const mail = mailSel.value;
+        const host = Number(hostSel.value) || 0;
+        const dom = Number(domSel.value) || 0;
+
+        const unico = PRICES.unico[plan];
+        const seo = PRICES.seo[plan];
+        const mailM =
+          mail === "5" ? PRICES.mail.five : mail === "10" ? PRICES.mail.ten : 0;
+
+        totalUnico.textContent = fmt(unico);
+        recurrente.textContent = fmt(seo + mailM) + "/mes";
+        anual.textContent = fmt(host + dom) + "/año";
+      }
+      [planSel, mailSel, hostSel, domSel].forEach(
+        (el) => el && el.addEventListener("change", recalc)
+      );
+      if (planSel) recalc();
+
+      // ======== Header glass al hacer scroll
+      const onScroll = () => {
+        const h = document.querySelector("header");
+        if (!h) return;
+        if (window.scrollY > 6) h.classList.add("scrolled");
+        else h.classList.remove("scrolled");
+      };
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+
+      // ======== Formulario: envío del presupuesto (con TOTAL NETO)
+      const ENDPOINT =
+        "https://script.google.com/macros/s/AKfycbwxs5AEC92HT2VEV0c3kgNk_x9kZGTV_YhQmS1qGYMaro_TvcEeh6CW9rDjfEF8kyAk/exec";
+
+      function getQuote() {
+        const plan = planSel.value;
+        const mail = mailSel.value;
+        const hostY = Number(hostSel.value) || 0; // anual
+        const domY = Number(domSel.value) || 0; // anual
+        const unico = PRICES.unico[plan];
+        const seoM = PRICES.seo[plan];
+        const mailM =
+          mail === "5" ? PRICES.mail.five : mail === "10" ? PRICES.mail.ten : 0;
+        const hostM = hostY / 12;
+        const domM = domY / 12;
+        const totalNeto = unico + mailM + hostM + domM;
+        return {
+          plan,
+          unico,
+          mail,
+          host: hostY,
+          dom: domY,
+          seoM,
+          mailM,
+          hostM,
+          domM,
+          totalNeto,
+          mensual: seoM + mailM,
+          anual: hostY + domY,
+        };
+      }
+
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        const name = $("#cName").value.trim();
+        const email = $("#cEmail").value.trim();
+        const phone = $("#cPhone").value.trim();
+        const msg = ($("#cMsg") || { value: "" }).value.trim();
+        const q = getQuote();
+
+        // Envío a Apps Script (servidor)
+        try {
+          if (ENDPOINT.includes("https://script.google.com/")) {
+            const payload = {
+              proyecto: "Vertical Brokers",
+              ...q,
+              nombre: name,
+              correo: email,
+              telefono: phone,
+              mensaje: msg,
+              fecha: new Date().toISOString(),
+            };
+            fetch(ENDPOINT, {
+              method: "POST",
+              mode: "no-cors",
+              headers: { "Content-Type": "text/plain;charset=utf-8" },
+              body: JSON.stringify(payload),
+            });
+          }
+        } catch (_) {}
+
+        // Fallback: email prellenado (incluye TOTAL NETO)
+        const subject = encodeURIComponent(
+          `Contacto — ${name} — Plan ${q.plan}`
+        );
+        const body = encodeURIComponent(
+          `Nombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nMensaje: ${msg}\n\n` +
+            `Plan: ${q.plan}\n` +
+            `Total inicial: ${fmt(q.unico)}\n` +
+            `1er mes correo: ${fmt(q.mailM)}\n` +
+            `1er mes hosting (prorrata): ${fmt(q.hostM)}\n` +
+            `1er mes dominio (prorrata): ${fmt(q.domM)}\n` +
+            `TOTAL NETO: ${fmt(q.totalNeto)}\n\n` +
+            `SEO mensual (si aplica): ${fmt(q.seoM)}\n` +
+            `Correos (plan): ${q.mail}\n` +
+            `Hosting anual: ${fmt(q.host)}\nDominio anual: ${fmt(q.dom)}\n`
+        );
+        window.location.href = `mailto:${AGENCY_EMAIL}?subject=${subject}&body=${body}`;
+
+        const status = $("#formStatus");
+        if (status) {
+          status.style.display = "block";
+          status.textContent =
+            "¡Enviado! Te enviamos el presupuesto por correo.";
+        }
+        e.target.reset();
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const f = $("#contactForm");
+        if (f) f.addEventListener("submit", handleContactSubmit);
+      });
+
+      // ======== Modo editable
+      const EDITABLE_SELECTORS = [
+        ".hero h2",
+        ".hero p",
+        "#planes .card ul",
+        "#planes .price",
+        "#planes .pill",
+        "#correo-hosting .card ul",
+        "#alcances .card ol",
+        "#alcances .card ul",
+        "#pasos ol",
+        "#contacto h3",
+        "#contacto .sub",
+      ];
+      const editsKey = "ffx_propuesta_edits";
+      function initEditable() {
+        const nodes = [];
+        EDITABLE_SELECTORS.forEach((sel) =>
+          document.querySelectorAll(sel).forEach((el) => {
+            if (!el.dataset.editId) el.dataset.editId = "e" + nodes.length;
+            nodes.push(el);
+          })
+        );
+        try {
+          const saved = JSON.parse(localStorage.getItem(editsKey) || "{}");
+          nodes.forEach((el) => {
+            if (saved[el.dataset.editId])
+              el.innerHTML = saved[el.dataset.editId];
+          });
+        } catch (_) {}
+        const toggle = $("#editToggle"),
+          saveBtn = $("#editSave"),
+          exportBtn = $("#editExport");
+        if (toggle) {
+          toggle.addEventListener("change", () => {
+            document.body.classList.toggle("editing", toggle.checked);
+            nodes.forEach((el) =>
+              el.setAttribute(
+                "contenteditable",
+                toggle.checked ? "true" : "false"
+              )
+            );
+          });
+        }
+        if (saveBtn) {
+          saveBtn.addEventListener("click", () => {
+            const map = {};
+            nodes.forEach((el) => (map[el.dataset.editId] = el.innerHTML));
+            localStorage.setItem(editsKey, JSON.stringify(map));
+            showToast("Cambios guardados (solo en este equipo).");
+          });
+        }
+        if (exportBtn) {
+          exportBtn.addEventListener("click", () => {
+            const html =
+              "<!doctype html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: "text/html" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "Propuesta-FastFix.html";
+            a.click();
+            URL.revokeObjectURL(a.href);
+          });
+        }
+      }
+      function showToast(msg) {
+        const t = $("#toast");
+        if (!t) return;
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 1800);
+      }
+      document.addEventListener("DOMContentLoaded", initEditable);
+    </script>
+  </body>
+</html>
