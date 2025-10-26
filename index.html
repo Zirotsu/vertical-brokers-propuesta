@@ -22,7 +22,7 @@
           <a href="#correo-hosting">Correo & Hosting</a>
           <a href="#alcances">Alcances</a>
           <a href="#contacto">Contacto</a>
-          <button class="btn" onclick="window.print()">Imprimir / PDF</button>
+          <!-- Botón de imprimir eliminado -->
         </nav>
       </div>
     </header>
@@ -294,29 +294,26 @@
         </p>
         <form id="contactForm" class="card form-grid">
           <label
-            >Nombre*<br /><input id="cName" type="text" required class="input"
-          /></label>
+            >Nombre*<br />
+            <input id="cName" type="text" required class="input" />
+          </label>
           <label
-            >Correo*<br /><input
-              id="cEmail"
-              type="email"
-              required
-              class="input"
-          /></label>
+            >Correo*<br />
+            <input id="cEmail" type="email" required class="input" />
+          </label>
           <label
-            >Teléfono*<br /><input
+            >Teléfono*<br />
+            <input
               id="cPhone"
               type="tel"
               required
               pattern="[0-9 +\-]{7,}"
               class="input"
-          /></label>
+            />
+          </label>
           <label
-            >Mensaje (opcional)<br /><textarea
-              id="cMsg"
-              rows="3"
-              class="input"
-            ></textarea>
+            >Mensaje (opcional)<br />
+            <textarea id="cMsg" rows="3" class="input"></textarea>
           </label>
           <div class="form-actions">
             <small class="sub"
@@ -388,14 +385,7 @@
       </div>
     </footer>
 
-    <!-- Barra de edición (modo editable) -->
-    <div id="editorbar" class="editorbar">
-      <input type="checkbox" id="editToggle" />
-      <label for="editToggle">Editar</label>
-      <button id="editSave" class="btn" type="button">Guardar</button>
-      <button id="editExport" class="btn" type="button">Exportar HTML</button>
-    </div>
-    <div id="toast" class="toast" aria-live="polite"></div>
+    <!-- Panel de edición eliminado -->
 
     <script>
       const $ = (s, ctx = document) => ctx.querySelector(s);
@@ -448,15 +438,18 @@
       const onScroll = () => {
         const h = document.querySelector("header");
         if (!h) return;
-        if (window.scrollY > 6) h.classList.add("scrolled");
-        else h.classList.remove("scrolled");
+        if (window.scrollY > 6) {
+          h.classList.add("scrolled");
+        } else {
+          h.classList.remove("scrolled");
+        }
       };
       window.addEventListener("scroll", onScroll);
       onScroll();
 
       // ======== Formulario: envío del presupuesto (con TOTAL NETO)
       const ENDPOINT =
-        "https://script.google.com/macros/s/AKfycbwxs5AEC92HT2VEV0c3kgNk_x9kZGTV_YhQmS1qGYMaro_TvcEeh6CW9rDjfEF8kyAk/exec";
+        "https://script.google.com/macros/s/AKfycbwbAw1CfTAOox1b-yzzViExltL4YCd-anQZh2Ypj7LKMSjG3y_9d832VcFP2I_qW9EG/exec";
 
       function getQuote() {
         const plan = planSel.value;
@@ -470,6 +463,7 @@
         const hostM = hostY / 12;
         const domM = domY / 12;
         const totalNeto = unico + mailM + hostM + domM;
+
         return {
           plan,
           unico,
@@ -545,80 +539,6 @@
         const f = $("#contactForm");
         if (f) f.addEventListener("submit", handleContactSubmit);
       });
-
-      // ======== Modo editable
-      const EDITABLE_SELECTORS = [
-        ".hero h2",
-        ".hero p",
-        "#planes .card ul",
-        "#planes .price",
-        "#planes .pill",
-        "#correo-hosting .card ul",
-        "#alcances .card ol",
-        "#alcances .card ul",
-        "#pasos ol",
-        "#contacto h3",
-        "#contacto .sub",
-      ];
-      const editsKey = "ffx_propuesta_edits";
-      function initEditable() {
-        const nodes = [];
-        EDITABLE_SELECTORS.forEach((sel) =>
-          document.querySelectorAll(sel).forEach((el) => {
-            if (!el.dataset.editId) el.dataset.editId = "e" + nodes.length;
-            nodes.push(el);
-          })
-        );
-        try {
-          const saved = JSON.parse(localStorage.getItem(editsKey) || "{}");
-          nodes.forEach((el) => {
-            if (saved[el.dataset.editId])
-              el.innerHTML = saved[el.dataset.editId];
-          });
-        } catch (_) {}
-        const toggle = $("#editToggle"),
-          saveBtn = $("#editSave"),
-          exportBtn = $("#editExport");
-        if (toggle) {
-          toggle.addEventListener("change", () => {
-            document.body.classList.toggle("editing", toggle.checked);
-            nodes.forEach((el) =>
-              el.setAttribute(
-                "contenteditable",
-                toggle.checked ? "true" : "false"
-              )
-            );
-          });
-        }
-        if (saveBtn) {
-          saveBtn.addEventListener("click", () => {
-            const map = {};
-            nodes.forEach((el) => (map[el.dataset.editId] = el.innerHTML));
-            localStorage.setItem(editsKey, JSON.stringify(map));
-            showToast("Cambios guardados (solo en este equipo).");
-          });
-        }
-        if (exportBtn) {
-          exportBtn.addEventListener("click", () => {
-            const html =
-              "<!doctype html>\n" + document.documentElement.outerHTML;
-            const blob = new Blob([html], { type: "text/html" });
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = "Propuesta-FastFix.html";
-            a.click();
-            URL.revokeObjectURL(a.href);
-          });
-        }
-      }
-      function showToast(msg) {
-        const t = $("#toast");
-        if (!t) return;
-        t.textContent = msg;
-        t.classList.add("show");
-        setTimeout(() => t.classList.remove("show"), 1800);
-      }
-      document.addEventListener("DOMContentLoaded", initEditable);
     </script>
   </body>
 </html>
